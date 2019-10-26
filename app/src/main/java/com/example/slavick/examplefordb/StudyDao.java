@@ -7,16 +7,20 @@ import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
 import java.util.List;
+import java.util.TreeSet;
 
 @Dao
 public interface StudyDao {
 
     //Requests for Student
     @Query("Select * From student")
-    List<Student> getAllStudents();
+    TreeSet<Student> getAllStudents();
 
     @Query("Select * From student where studId = :studId")
     Student getStudById(int studId);
+
+    @Query("Select * From student where groupId = :groupId")
+    List<Student> getStudentsFromGroup(int groupId);
 
     @Insert
     Student insertStud(Student student);
