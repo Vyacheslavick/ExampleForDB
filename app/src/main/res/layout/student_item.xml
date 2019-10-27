@@ -7,20 +7,20 @@
 
     <TextView
         android:id="@+id/index"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_weight="1"
         android:padding="6dp"
         android:textSize="28sp"
-        tools:hint="1." />
+        tools:hint="12." />
 
     <TextView
         android:id="@+id/name"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        tools:hint="sdfsfddfgf"
+        tools:hint="sdsdfdfdfgf"
         android:textSize="28sp"
         android:padding="8dp"
-        android:layout_weight="15"/>
+        android:layout_weight="6"/>
 
 </LinearLayout>

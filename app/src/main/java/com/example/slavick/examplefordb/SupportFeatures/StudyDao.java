@@ -1,10 +1,17 @@
-package com.example.slavick.examplefordb;
+package com.example.slavick.examplefordb.SupportFeatures;
 
 import android.arch.persistence.room.Dao;
 import android.arch.persistence.room.Delete;
 import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
+
+import com.example.slavick.examplefordb.Classes.Discipline;
+import com.example.slavick.examplefordb.Classes.Group;
+import com.example.slavick.examplefordb.Classes.Mark;
+import com.example.slavick.examplefordb.Classes.Semester;
+import com.example.slavick.examplefordb.Classes.Student;
+import com.example.slavick.examplefordb.Classes.Teacher;
 
 import java.util.List;
 import java.util.TreeSet;
@@ -85,6 +92,9 @@ public interface StudyDao {
 
     @Query("Select * From semester where subjId = :subjId and semId = :semId and groupId = :groupId")
     Semester getSemesterById(int subjId, int semId, int groupId);
+
+    @Query("Select * From semester where teachId = :teachId")
+    List<Semester> getSemesterByTeacher(int teachId);
 
     @Insert
     Semester insertSemester(Semester semester);

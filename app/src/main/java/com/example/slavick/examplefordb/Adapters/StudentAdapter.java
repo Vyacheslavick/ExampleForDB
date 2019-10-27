@@ -1,4 +1,4 @@
-package com.example.slavick.examplefordb;
+package com.example.slavick.examplefordb.Adapters;
 
 
 import android.content.Context;
@@ -9,7 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
-import java.util.Collections;
+import com.example.slavick.examplefordb.Classes.Student;
+import com.example.slavick.examplefordb.R;
+
 import java.util.List;
 
 public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHolder>{
@@ -33,7 +35,10 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
-
+        Student student = students.get(position);
+        holder.index.setText(position+1);
+        String s = student.getName() + " " + String.valueOf(student.getSername().charAt(0)) + ". " + String.valueOf(student.getFathers().charAt(0)) + ".";
+        holder.name.setText(s);
     }
 
     @Override

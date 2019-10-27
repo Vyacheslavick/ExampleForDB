@@ -1,4 +1,4 @@
-package com.example.slavick.examplefordb;
+package com.example.slavick.examplefordb.SupportFeatures;
 
 import android.app.Application;
 import android.arch.persistence.room.Room;
