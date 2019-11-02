@@ -8,39 +8,56 @@
     android:orientation="vertical">
 
     <TextView
+        android:text="Введите Имя студента: "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/name"/>
+        android:id="@+id/name"
+        android:textSize="24sp"
+        android:padding="12dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_name"/>
+        android:id="@+id/edit_name"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="40dp"/>
 
     <TextView
+        android:text="Введите Фамилию студента: "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/sername"/>
+        android:id="@+id/sername"
+        android:textSize="24sp"
+        android:padding="12dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_sername"/>
+        android:id="@+id/edit_sername"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="40dp"/>
 
     <TextView
+        android:text="Введите Отчество студента: "
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/fathers"/>
+        android:id="@+id/fathers"
+        android:textSize="24sp"
+        android:padding="12dp"/>
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/edit_fathers"/>
+        android:id="@+id/edit_fathers"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="40dp"/>
+
     <Button
+        android:layout_margin="40dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/add_student"
-        android:textSize="20sp"
+        android:textSize="24sp"
         android:text="Добавить студента"/>
 
 </LinearLayout>

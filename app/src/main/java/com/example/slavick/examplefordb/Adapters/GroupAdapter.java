@@ -53,6 +53,19 @@ public class GroupAdapter extends RecyclerView.Adapter<GroupAdapter.ViewHolder>{
         public ViewHolder(View itemView) {
             super(itemView);
             group = itemView.findViewById(R.id.group);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    groupItemClick.onClick(getAdapterPosition());
+                }
+            });
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    groupItemClick.onLongClick(getAdapterPosition());
+                    return true;
+                }
+            });
         }
     }
 }

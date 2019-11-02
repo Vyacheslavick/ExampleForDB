@@ -4,25 +4,27 @@ import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;
 
 @Entity
-public class Group {
+public class Branch {
 
     @PrimaryKey(autoGenerate = true)
-    int groupId;
+    int fullNameId;
 
+
+    String fullName;
     String shortName;
-    int longNameId;
 
-    public Group(String shortName, int longNameId) {
+    public Branch(String fullName, String shortName) {
+
+        this.fullName = fullName;
         this.shortName = shortName;
-        this.longNameId = longNameId;
     }
 
-    public int getGroupId() {
-        return groupId;
+    public String getFullName() {
+        return fullName;
     }
 
-    public void setGroupId(int groupId) {
-        this.groupId = groupId;
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
     }
 
     public String getShortName() {
@@ -33,11 +35,12 @@ public class Group {
         this.shortName = shortName;
     }
 
-    public int getLongNameId() {
-        return longNameId;
+    public int getFullNameId() {
+        return fullNameId;
     }
 
-    public void setLongNameId(int longNameId) {
-        this.longNameId = longNameId;
+    public void setFullNameId(int fullNameId) {
+        this.fullNameId = fullNameId;
     }
+
 }

@@ -11,7 +11,7 @@ public class App extends Application {
     public void onCreate() {
         super.onCreate();
         instance = this;
-        StudyDatabase studyDatabase = Room.databaseBuilder(getApplicationContext(), StudyDatabase.class, "database").allowMainThreadQueries().build();
+        StudyDatabase studyDatabase = Room.databaseBuilder(getApplicationContext(), StudyDatabase.class, "Database").allowMainThreadQueries().build();
         studyDao = studyDatabase.getStudyDao();
     }
 

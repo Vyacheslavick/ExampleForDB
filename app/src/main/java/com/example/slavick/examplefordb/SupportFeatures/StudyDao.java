@@ -6,6 +6,7 @@ import android.arch.persistence.room.Insert;
 import android.arch.persistence.room.Query;
 import android.arch.persistence.room.Update;
 
+import com.example.slavick.examplefordb.Classes.Branch;
 import com.example.slavick.examplefordb.Classes.Discipline;
 import com.example.slavick.examplefordb.Classes.Group;
 import com.example.slavick.examplefordb.Classes.Mark;
@@ -21,22 +22,25 @@ public interface StudyDao {
 
     //Requests for Student
     @Query("Select * From student")
-    TreeSet<Student> getAllStudents();
+    List<Student> getAllStudents();
 
     @Query("Select * From student where studId = :studId")
     Student getStudById(int studId);
+
+    @Query("Select * From student where name = :name and sername = :sername and fathers = :fathers")
+    Student getStudWithName(String name, String sername, String fathers);
 
     @Query("Select * From student where groupId = :groupId")
     List<Student> getStudentsFromGroup(int groupId);
 
     @Insert
-    Student insertStud(Student student);
+    void insertStud(Student student);
 
     @Delete
-    Student deleteStud(Student student);
+    void deleteStud(Student student);
 
     @Update
-    Student updateStud(Student student);
+    void updateStud(Student student);
 
     //Requests for Teacher
     @Query("Select * From teacher")
@@ -46,13 +50,13 @@ public interface StudyDao {
     Teacher getTeachById(int teachId);
 
     @Insert
-    Teacher insertTeach(Teacher teacher);
+    void insertTeach(Teacher teacher);
 
     @Delete
-    Teacher deleteTeach(Teacher teacher);
+    void deleteTeach(Teacher teacher);
 
     @Update
-    Teacher updateTeach(Teacher teacher);
+    void updateTeach(Teacher teacher);
 
     //Requests for Group
     @Query("Select * From `Group`")
@@ -61,14 +65,17 @@ public interface StudyDao {
     @Query("Select * From `group` where groupId = :groupId")
     Group getGroupById(int groupId);
 
+    @Query("Select * from `group` where shortName = :shortName")
+    Group getGroupByName(String shortName);
+
     @Insert
-    Group insertGroup(Group group);
+    void insertGroup(Group group);
 
     @Delete
-    Group deleteGroup(Group group);
+    void deleteGroup(Group group);
 
     @Update
-    Group updateGroup(Group group);
+    void updateGroup(Group group);
 
     //Requests for Discipline
     @Query("Select * From discipline")
@@ -78,13 +85,13 @@ public interface StudyDao {
     Discipline getSubjById(int subjId);
 
     @Insert
-    Discipline insertSubj(Discipline discipline);
+    void insertSubj(Discipline discipline);
 
     @Delete
-    Discipline deleteSubj(Discipline discipline);
+    void deleteSubj(Discipline discipline);
 
     @Update
-    Discipline updateSubj(Discipline discipline);
+    void updateSubj(Discipline discipline);
 
     //Requests for Semester
     @Query("Select * From semester")
@@ -97,13 +104,13 @@ public interface StudyDao {
     List<Semester> getSemesterByTeacher(int teachId);
 
     @Insert
-    Semester insertSemester(Semester semester);
+    void insertSemester(Semester semester);
 
     @Delete
-    Semester deleteSemester(Semester semester);
+    void deleteSemester(Semester semester);
 
     @Update
-    Semester updateSemester(Semester semester);
+    void updateSemester(Semester semester);
 
     //Requests for Mark
     @Query("Select * From mark")
@@ -113,13 +120,32 @@ public interface StudyDao {
     Mark getMarkById(int subjId, int semId, int studId);
 
     @Insert
-    Semester insertMark(Semester semester);
+    void insertMark(Mark mark);
 
     @Delete
-    Semester deleteMark(Semester semester);
+    void deleteMark(Mark mark);
 
     @Update
-    Semester updateMark(Semester semester);
+    void updateMark(Mark mark);
 
+    //Branch requests
+
+    @Query("Select * From branch")
+    List<Branch> getAllBranches();
+
+    @Query("Select * From branch where fullNameId = :branchId")
+    Branch getBranchWithId(int branchId);
+
+    @Query("Select * From branch where fullName = :fullName")
+    Branch getBranchWithName(String fullName);
+
+    @Insert
+    void insertBranch(Branch branch);
+
+    @Delete
+    void deleteBranch(Branch branch);
+
+    @Update
+    void updateBranch(Branch branch);
 
 }

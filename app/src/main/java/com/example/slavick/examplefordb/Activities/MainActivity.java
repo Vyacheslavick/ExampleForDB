@@ -33,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         groups.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, GroupActivity.class);
+                Intent intent = new Intent(MainActivity.this, BranchActivity.class);
                 startActivity(intent);
             }
         });

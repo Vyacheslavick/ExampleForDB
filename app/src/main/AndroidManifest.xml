@@ -21,7 +21,11 @@
         <activity android:name=".Activities.TeacherActivity" />
         <activity android:name=".Activities.DisciplineActivity" />
         <activity android:name=".Activities.AddGroupActivity" />
-        <activity android:name=".Activities.AddStudentActivity"></activity>
+        <activity android:name=".Activities.AddStudentActivity" />
+        <activity android:name=".Activities.StudentActivity" />
+        <activity android:name=".Activities.AddDisciplineActivity" />
+        <activity android:name=".Activities.BranchActivity" />
+        <activity android:name=".Activities.AddBranchActivity"></activity>
     </application>
 
 </manifest>

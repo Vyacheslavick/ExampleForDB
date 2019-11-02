@@ -36,8 +36,9 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         Student student = students.get(position);
-        holder.index.setText(position+1);
-        String s = student.getName() + " " + String.valueOf(student.getSername().charAt(0)) + ". " + String.valueOf(student.getFathers().charAt(0)) + ".";
+        String s = Integer.toString(position+1).concat(".");
+        holder.index.setText(s);
+        s = student.getSername() + " " + String.valueOf(student.getName().charAt(0)) + ". " + String.valueOf(student.getFathers().charAt(0)) + ".";
         holder.name.setText(s);
     }
 
@@ -58,6 +59,19 @@ public class StudentAdapter extends RecyclerView.Adapter<StudentAdapter.ViewHold
             super(itemView);
             name = itemView.findViewById(R.id.name);
             index = itemView.findViewById(R.id.index);
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    recycleItemClick.onClick(getAdapterPosition());
+                }
+            });
+            itemView.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View v) {
+                    recycleItemClick.onLongClick(getAdapterPosition());
+                    return true;
+                }
+            });
         }
     }
 }
